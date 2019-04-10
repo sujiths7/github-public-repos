@@ -1,0 +1,7 @@
+- repos.each do |repo|
+  %tr
+    %td= repo[:full_name]
+    %td= repo[:owner][:login]
+    %td
+      = link_to repo[:html_url], target: '_blank' do
+        = repo[:html_url]

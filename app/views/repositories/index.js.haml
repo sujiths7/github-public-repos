@@ -1,0 +1,6 @@
+$('#loader').addClass('d-none')
+$('#repositories_table').show()
+
+$('#repositories_table').html("#{escape_javascript render( partial: 'repositories/repos_table', locals: { repos: @repositories.items })}");
+
+Repositories.loaderOnPaginationClick()

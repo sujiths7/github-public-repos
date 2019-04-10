@@ -1,0 +1,16 @@
+
+%nav.navbar.navbar-light.bg-light
+  %span.navbar-brand.mb-0.h1 GitHub Repositories
+
+.col-md-12.pt-4
+  .form-group
+    = form_tag root_path, method: :get, class: 'query_form', remote: true do
+      = text_field_tag :query, '', class: 'form-control input-sm w-50 d-inline', placeholder: 'Search for public repositories', required: true
+      = button_tag(type: 'submit', class: 'btn btn-info btn', id: 'submit_btn') do
+        Search
+
+%center#loader.d-none
+  = image_tag 'loading.gif'
+
+#repositories_table.col-md-12
+  = render 'repositories/no_search_results'
